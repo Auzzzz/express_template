@@ -21,15 +21,11 @@ app.use(express.json());
 // });
 
 // Routes
-require("./src/routes/test.routes")(express, app)
+require("./routes/test.routes")(express, app)
 
 // simple route
 app.get("/test", (req, res) => {
   res.json({ message: "Welcome to bezkoder application." });
 });
 
-// set port, listen for requests
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}.`);
-});
+module.exports = app;
